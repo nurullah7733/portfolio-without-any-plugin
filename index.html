@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio system using just jquery</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section class="portfolio">
+		<ul>
+			<li class="list active" data-filter="all">All</li>
+			<li class="list" data-filter="mobile">Mobile</li>
+			<li class="list" data-filter="camera">Camera</li>
+			<li class="list" data-filter="watch">Watch</li>
+			<li class="list" data-filter="shoe">Shoe</li>
+			<li class="list" data-filter="headphone">Headphone</li>
+		</ul>
+		<div class="product">
+			<div class="itemBox mobile"><img src="img/mobile1.jpg"></div>
+			<div class="itemBox camera"><img src="img/camera1.jpg"></div>
+			<div class="itemBox watch"><img src="img/watch1.jpg"></div>
+			<div class="itemBox shoe"><img src="img/shoe1.jpg"></div>
+			<div class="itemBox headphone"><img src="img/headphone1.jpg"></div>
+
+			<div class="itemBox mobile"><img src="img/mobile2.jpg"></div>
+			<div class="itemBox camera"><img src="img/camera2.jpg"></div>
+			<div class="itemBox watch"><img src="img/watch2.jpg"></div>
+			<div class="itemBox shoe"><img src="img/shoe2.jpg"></div>
+			<div class="itemBox headphone"><img src="img/headphone2.jpg"></div>
+
+			<div class="itemBox mobile"><img src="img/mobile3.jpg"></div>
+			<div class="itemBox camera"><img src="img/camera3.jpg"></div>
+			<div class="itemBox watch"><img src="img/watch3.jpg"></div>
+			<div class="itemBox shoe"><img src="img/shoe3.jpg"></div>
+			<div class="itemBox headphone"><img src="img/headphone3.jpg"></div>
+
+			<div class="itemBox mobile"><img src="img/mobile4.jpg"></div>
+			<div class="itemBox camera"><img src="img/camera4.jpg"></div>
+			<div class="itemBox watch"><img src="img/watch4.jpg"></div>
+			<div class="itemBox shoe"><img src="img/shoe4.jpg"></div>
+			<div class="itemBox headphone"><img src="img/headphone4.jpg"></div> 
+		</div>
+	</section>
+
+
+
+
+
+
+
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.list').click(function(){
+				var value = $(this).attr('data-filter');
+				if(value == 'all'){
+					$('.itemBox').show('1000');
+				}
+				else{
+					$('.itemBox').not('.'+value).hide('1000');
+					$('.itemBox').filter('.'+value).show('1000');
+				}
+				//add active class on selected item
+
+				$('.list').click(function(){
+					$(this).addClass('active').siblings().removeClass('active');
+				})
+			})
+		})
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
